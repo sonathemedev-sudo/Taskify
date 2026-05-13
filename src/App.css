@@ -78,7 +78,7 @@ button.button {
     flex-wrap: wrap;
 }
 
-/* Dark mode styles */
+/*-- Dark mode styles --*/
 
 .taskWrapper.dark {
     background: #333333;
