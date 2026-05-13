@@ -87,3 +87,13 @@ button.button {
 .taskWrapper.dark .heading {
     color: #fff;
 }
+
+.taskWrapper.dark .dataList button.button {
+    background-color: #555;
+    color: #fff;
+}
+
+.taskWrapper.dark .headerWrapper button {
+    background-color: #555;
+    color: #fff;
+}
