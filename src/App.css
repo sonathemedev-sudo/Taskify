@@ -97,3 +97,7 @@ button.button {
     background-color: #555;
     color: #fff;
 }
+
+.taskWrapper.dark  .contentWrapper p {
+    color: #fff;
+}
