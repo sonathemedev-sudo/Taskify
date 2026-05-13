@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
 
   const [editId, setEditId] = useState(null);
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
 
   function addTask () {
 
@@ -97,8 +105,6 @@ function App() {
           {
             todos.map((todo) => {
               return(
-                <>
-                
                 <div className="dataList" key={todo.id}>
                   <div className="taskContent">
                     {todo.text}
@@ -106,7 +112,6 @@ function App() {
                   <button className="button" onClick={() => deleteTask(todo.id)}>Delete</button>
                   <button className="button" onClick={() => editTask(todo)}>Edit</button>
                 </div>
-                </>
               )
             })
           }
